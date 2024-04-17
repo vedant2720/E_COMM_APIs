@@ -1,8 +1,0 @@
-ProductController
-Get Products
-Add a product
-Get one product
-Rate product.
-Filter Product
-
-//static functions directly called with name.
