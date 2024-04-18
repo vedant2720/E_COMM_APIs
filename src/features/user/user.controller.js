@@ -20,7 +20,7 @@ export default class UserController {
         const newuser = UserModel.signIn(email, password);
 
         if (!newuser) {
-            res.status(400).send("User not found");
+            res.status(400).send("User not found/Invalid Credentials");
         } else {
             //1. create token
             const token = jwt.sign(

@@ -53,3 +53,34 @@ payload:
 
 signature:
 HASHINGALGO( base64UrlEncode(header) + “.” + base64UrlEncode(payload),secret)
+
+
+todo:
+
+check if user add product to cart (same prod) then update it.
+
+
+"JWT":{
+            "in":"header",
+            "name":"Authorization",
+            "type": "apiKey"  
+        }
+
+one one type is "Bearer"
+
+
+swagger 3.0 has some extra functionalities like allow multiple servers / sending file. see in docs
+
+
+Commands in mongodb:
+
+find() -> will give all the entries;
+            if condition given then give all matching
+
+findOne()  -> will give only one entry if condition given then which ever was first 
+                then it was returned.
+
+To update: we have to use $set operator and then { } attributes to change.
+
+db.books.updateOne({title:"Da Vinchi Code"},{$set:{author:"Daniel Brown"}})
+

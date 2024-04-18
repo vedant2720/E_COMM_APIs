@@ -1,0 +1,78 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "description": "APIs for E-commerce application",
+        "title": "E-comm APIs"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3200"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "JWT": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "Authorization"
+            }
+        }
+    },
+    "paths": {
+        "/api/users/signIn": {
+            "post": {
+                "tags": ["Users"],
+                "summary": "Login",
+                "description": "User login to get token",
+                "requestBody": {
+                    "description": "User credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "User not found/Invalid Credentials"
+                    }
+                }
+            }
+        },
+        "/api/products/": {
+            "get": {
+                "tags": ["Products"],
+                "summary": "Get products",
+                "description": "User will get all the products",
+                "security": [
+                    {
+                        "JWT": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -23,7 +23,6 @@ const cartItemsController = new CartItemsController();
 
 cartRouter.post(
     '/add',
-    jwtAuth,
     cartItemsController.add
 );
 
@@ -34,7 +33,6 @@ cartRouter.get(
 
 cartRouter.get(
     '/getcart',
-    jwtAuth,
     cartItemsController.get
 );
 
